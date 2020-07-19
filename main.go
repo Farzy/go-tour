@@ -15,4 +15,6 @@ func main() {
 	sandbox()
 	title("Packages")
 	packages()
+	title("Functions")
+	functions()
 }
