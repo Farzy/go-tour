@@ -21,4 +21,6 @@ func main() {
 	variables()
 	title("Types")
 	types()
+	title("Constants")
+	constants()
 }
