@@ -23,4 +23,6 @@ func main() {
 	types()
 	title("Constants")
 	constants()
+	title("For loops")
+	forLoop()
 }
