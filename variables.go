@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/cmplx"
 )
 
@@ -38,4 +39,9 @@ func types() {
 	var b bool
 	var s string
 	fmt.Printf("Default values: %v %v %v %q\n", i, f, b, s)
+
+	var x, y int = 3, 4
+	var g float64 = math.Sqrt(float64(x*x + y*y))
+	var z uint = uint(g)
+	fmt.Printf("Type conversion: int(%v, %v), float64(%v), uint(%v)", x, y, g, z)
 }
