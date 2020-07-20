@@ -19,4 +19,6 @@ func main() {
 	functions()
 	title("Variables")
 	variables()
+	title("Types")
+	types()
 }
