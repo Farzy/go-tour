@@ -32,4 +32,10 @@ func types() {
 	fmt.Printf("Type: %T Value: %v\n", ToBe, ToBe)
 	fmt.Printf("Type: %T Value: %v\n", MaxInt, MaxInt)
 	fmt.Printf("Type: %T Value: %v\n", z, z)
+
+	var i int
+	var f float64
+	var b bool
+	var s string
+	fmt.Printf("Default values: %v %v %v %q\n", i, f, b, s)
 }
