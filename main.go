@@ -25,4 +25,6 @@ func main() {
 	constants()
 	title("For loops")
 	forLoop()
+	title("If")
+	ifs()
 }
