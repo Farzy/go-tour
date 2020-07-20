@@ -17,4 +17,6 @@ func main() {
 	packages()
 	title("Functions")
 	functions()
+	title("Variables")
+	variables()
 }
