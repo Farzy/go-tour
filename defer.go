@@ -13,7 +13,7 @@ func func1() int {
 }
 
 func func2() int {
-	fmt.Println("func2: Couting…")
+	fmt.Println("func2: Counting…")
 
 	for i := 0; i < 10; i++ {
 		defer fmt.Println(i)
