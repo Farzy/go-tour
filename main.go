@@ -27,4 +27,6 @@ func main() {
 	forLoop()
 	title("If")
 	ifs()
+	title("Exercices: Loops and functions")
+	exerciceLoopsAndFunctions()
 }
