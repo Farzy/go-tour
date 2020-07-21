@@ -43,4 +43,6 @@ func main() {
 	switches()
 	title("Defer")
 	defers()
+	title("Types")
+	moreTypes()
 }
