@@ -29,4 +29,6 @@ func main() {
 	ifs()
 	title("Exercices: Loops and functions")
 	exerciceLoopsAndFunctions()
+	title("Switch")
+	switches()
 }
