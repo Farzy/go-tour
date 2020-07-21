@@ -22,6 +22,7 @@ func variables() {
 	fmt.Println(l, c3, python3, java3)
 }
 
+// ToBe or not to be
 var (
 	ToBe   bool       = false
 	MaxInt uint64     = 1<<64 - 1
@@ -46,6 +47,7 @@ func types() {
 	fmt.Printf("Type conversion: int(%v, %v), float64(%v), uint(%v)\n", x, y, g, z)
 }
 
+// Big is a very large constant
 const (
 	Big   = 1 << 100
 	Small = Big >> 99

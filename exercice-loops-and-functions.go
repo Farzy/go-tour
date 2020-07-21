@@ -5,25 +5,30 @@ import (
 	"math"
 )
 
+// Precision Stop iterating on Sqrt when relative difference is smaller than this
 const Precision = 1e-14
 
+// Sqrt calculates square root using Newton's method
+// Stop iterating when relative difference of squares is less than Precision
 func Sqrt(x float64) (float64, int) {
 	z := 1.0
 	iterations := 1
 	for math.Abs((z*z-x)/x) > Precision {
 		z -= (z*z - x) / (2 * z)
-		iterations += 1
+		iterations++
 	}
 	return z, iterations
 }
 
+// Sqrt2 calculates square root using Newton's method
+// Stop iterating when relative difference of 2 consecutives results is less than Precision
 func Sqrt2(x float64) (float64, int) {
-	z, z_prev := 1.0, 0.0
+	z, zPrev := 1.0, 0.0
 	iterations := 0
-	for (math.Abs(z-z_prev) / z) > Precision {
-		z_prev = z
+	for (math.Abs(z-zPrev) / z) > Precision {
+		zPrev = z
 		z -= (z*z - x) / (2 * z)
-		iterations += 1
+		iterations++
 	}
 	return z, iterations
 }
