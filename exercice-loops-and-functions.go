@@ -34,7 +34,7 @@ func exerciceLoopsAndFunctions() {
 	res, iter = Sqrt(2)
 	fmt.Printf("Sqrt2(2) = %v (%v iterations)\n", res, iter)
 
-	var vals = []float64{1, 4, 3, 9, 5, 25}
+	var vals = []float64{1, 4, 3, 9, 5, 25, 100, 1000}
 
 	for _, x := range vals {
 		res1, iter1 := Sqrt(x)
