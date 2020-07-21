@@ -1,13 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func title(title string) {
 	fmt.Println("")
-	fmt.Println("###################")
+	fmt.Println(strings.Repeat("#", len(title)+8))
 	fmt.Println("###", title, "###")
-	fmt.Println("###################")
+	fmt.Println(strings.Repeat("#", len(title)+8))
 }
+
+func subtitle(subtitle string) {
+	fmt.Println("")
+	fmt.Println(subtitle)
+	fmt.Println(strings.Repeat("-", len(subtitle)))
+}
+
 func main() {
 	title("Hello")
 	hello()
