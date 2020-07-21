@@ -17,7 +17,22 @@ func pointers() {
 	fmt.Println("j = ", j)
 }
 
+type Vertex struct {
+	X int
+	Y int
+}
+
+func structs() {
+	fmt.Println("Struct (Println):", Vertex{1, 2})
+	v := Vertex{1, 2}
+	fmt.Printf("Struct (Printf %%V %%T) : %v of type %[1]T\n", v)
+	fmt.Printf("Struct (Printf %%+V) : %+v\n", v)
+	fmt.Printf("Struct (Printf %%#V) : %#v\n", v)
+}
+
 func moreTypes() {
 	subtitle("Pointers")
 	pointers()
+	subtitle("Struct")
+	structs()
 }
