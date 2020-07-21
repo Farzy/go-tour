@@ -31,4 +31,6 @@ func main() {
 	exerciceLoopsAndFunctions()
 	title("Switch")
 	switches()
+	title("Defer")
+	defers()
 }
