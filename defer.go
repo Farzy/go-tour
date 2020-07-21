@@ -2,20 +2,25 @@ package main
 
 import "fmt"
 
-func defer1() {
-	defer fmt.Println("…World")
+func func1() int {
+	defer fmt.Println(
+		"…World (this is printed after func2's counter: the return value is " +
+			"calculated but held until func1's defer functions are executed.)")
 
-	fmt.Println("Hello…")
+	fmt.Println("func1: Hello…")
+
+	return func2()
 }
 
-func defer2() {
-	fmt.Println("Couting…")
+func func2() int {
+	fmt.Println("func2: Couting…")
 
 	for i := 0; i < 10; i++ {
 		defer fmt.Println(i)
 	}
+	return 42
 }
 func defers() {
-	defer1()
-	defer2()
+	func1()
+	//func2()
 }
