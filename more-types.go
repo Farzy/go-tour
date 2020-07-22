@@ -28,6 +28,16 @@ func structs() {
 	fmt.Printf("Struct (Printf %%V %%T) : %v of type %[1]T\n", v)
 	fmt.Printf("Struct (Printf %%+V) : %+v\n", v)
 	fmt.Printf("Struct (Printf %%#V) : %#v\n", v)
+
+	v.X = 4
+	fmt.Printf("new V = %v, v.X = %v\n", v, v.X)
+
+	var p *Vertex
+	p = &v
+
+	p.X = 1e9
+	fmt.Printf("new V via pointer = %v\n", v)
+
 }
 
 func moreTypes() {
