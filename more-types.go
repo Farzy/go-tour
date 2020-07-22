@@ -64,6 +64,31 @@ func arrays() {
 	fmt.Printf("primes = %v\n", primes)
 }
 
+func slices() {
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+
+	var s []int = primes[1:4]
+	fmt.Printf("Slice [1:4] of prime = %v\n", s)
+
+	names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println("names =", names)
+
+	a := names[0:2]
+	b := names[1:3]
+	fmt.Printf("a = %v, b = %v\n", a, b)
+
+	b[0] = "XXX"
+	fmt.Println("b[0] = \"XXX\"")
+	fmt.Printf("a = %v, b = %v\n", a, b)
+	fmt.Println("names =", names)
+
+}
+
 func moreTypes() {
 	subtitle("Pointers")
 	pointers()
@@ -71,4 +96,6 @@ func moreTypes() {
 	structs()
 	subtitle("Arrays")
 	arrays()
+	subtitle("Slices")
+	slices()
 }
