@@ -64,6 +64,10 @@ func arrays() {
 	fmt.Printf("primes = %v\n", primes)
 }
 
+func printSlice(s []int) {
+	fmt.Printf("len=%d cap=%d s=%v\n", len(s), cap(s), s)
+}
+
 func slices() {
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 
@@ -105,6 +109,39 @@ func slices() {
 		{13, true},
 	}
 	fmt.Printf("s = %v\n", u)
+
+	q = q[1:4]
+	fmt.Printf("q[1:4] = %v\n", q)
+
+	q = q[:2]
+	fmt.Printf("q[:2] = %v\n", q)
+
+	q = q[1:]
+	fmt.Printf("q[1:] = %v\n", q)
+
+	s = []int{2, 3, 5, 7, 11, 13}
+	printSlice(s)
+
+	println("Slice the slice to give it zero length")
+	s = s[:0]
+	printSlice(s)
+
+	fmt.Println("Extend its length")
+	s = s[:4]
+	printSlice(s)
+
+	fmt.Println("Drop its first 2 values")
+	s = s[2:]
+	printSlice(s)
+
+	fmt.Println("Extend length to 3")
+	s = s[:3]
+	printSlice(s)
+
+	// panic: runtime error: slice bounds out of range [:5] with capacity 4
+	//fmt.Println("Extend length to 5")
+	//s = s[:5]
+	//printSlice(s)
 }
 
 func moreTypes() {
