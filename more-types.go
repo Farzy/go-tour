@@ -17,6 +17,7 @@ func pointers() {
 	fmt.Println("j = ", j)
 }
 
+// Vertex is a sample struct
 type Vertex struct {
 	X int
 	Y int
@@ -44,11 +45,11 @@ func structs() {
 		X: 1,
 	}
 	v3 := Vertex{}
-	p_ := &Vertex{
+	pp := &Vertex{
 		X: 1,
 		Y: 2,
 	}
-	fmt.Printf("v1 = %v, v2 = %v, v3 = %v, p = %v\n", v1, v2, v3, p_)
+	fmt.Printf("v1 = %v, v2 = %v, v3 = %v, p = %v\n", v1, v2, v3, pp)
 }
 
 func arrays() {
@@ -142,6 +143,15 @@ func slices() {
 	//fmt.Println("Extend length to 5")
 	//s = s[:5]
 	//printSlice(s)
+
+	// Nil slice
+	var ns []int
+	fmt.Println("Nil slice")
+	printSlice(ns)
+	//noinspection GoNilness
+	if ns == nil {
+		fmt.Println("s is nil")
+	}
 }
 
 func moreTypes() {
