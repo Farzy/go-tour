@@ -65,8 +65,8 @@ func arrays() {
 	fmt.Printf("primes = %v\n", primes)
 }
 
-func printSlice(s []int) {
-	fmt.Printf("len=%d cap=%d s=%v\n", len(s), cap(s), s)
+func printSlice(s string, x []int) {
+	fmt.Printf("%s:\n  len=%d cap=%d x=%v\n", s, len(x), cap(x), x)
 }
 
 func slices() {
@@ -121,33 +121,27 @@ func slices() {
 	fmt.Printf("q[1:] = %v\n", q)
 
 	s = []int{2, 3, 5, 7, 11, 13}
-	printSlice(s)
+	printSlice("s", s)
 
-	println("Slice the slice to give it zero length")
 	s = s[:0]
-	printSlice(s)
+	printSlice("Slice the slice to give it zero length", s)
 
-	fmt.Println("Extend its length")
 	s = s[:4]
-	printSlice(s)
+	printSlice("Extend its length", s)
 
-	fmt.Println("Drop its first 2 values")
 	s = s[2:]
-	printSlice(s)
+	printSlice("Drop its first 2 values", s)
 
-	fmt.Println("Extend length to 3")
 	s = s[:3]
-	printSlice(s)
+	printSlice("Extend length to 3", s)
 
 	// panic: runtime error: slice bounds out of range [:5] with capacity 4
-	//fmt.Println("Extend length to 5")
 	//s = s[:5]
-	//printSlice(s)
+	//printSlice("Extend length to 5", s)
 
 	// Nil slice
 	var ns []int
-	fmt.Println("Nil slice")
-	printSlice(ns)
+	printSlice("Nil slice", ns)
 	//noinspection GoNilness
 	if ns == nil {
 		fmt.Println("s is nil")
