@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func pointers() {
 	i, j := 42, 2701
@@ -145,6 +148,36 @@ func slices() {
 	//noinspection GoNilness
 	if ns == nil {
 		fmt.Println("s is nil")
+	}
+
+	aa := make([]int, 5)
+	printSlice("aa", aa)
+
+	bb := make([]int, 0, 5)
+	printSlice("bb", bb)
+
+	cc := bb[:2]
+	printSlice("cc", cc)
+
+	dd := cc[2:5]
+	printSlice("dd", dd)
+
+	// Create a tic-tac-toe board.
+	board := [][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+
+	// The players take turn
+	board[0][0] = "X"
+	board[2][2] = "O"
+	board[1][2] = "X"
+	board[1][0] = "O"
+	board[0][2] = "X"
+
+	for i := 0; i < len(board); i++ {
+		println(strings.Join(board[i], " "))
 	}
 }
 
