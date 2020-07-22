@@ -38,6 +38,17 @@ func structs() {
 	p.X = 1e9
 	fmt.Printf("new V via pointer = %v\n", v)
 
+	// Struct literals
+	v1 := Vertex{1, 2}
+	v2 := Vertex{
+		X: 1,
+	}
+	v3 := Vertex{}
+	p_ := &Vertex{
+		X: 1,
+		Y: 2,
+	}
+	fmt.Printf("v1 = %v, v2 = %v, v3 = %v, p = %v\n", v1, v2, v3, p_)
 }
 
 func moreTypes() {
