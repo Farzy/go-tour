@@ -87,6 +87,24 @@ func slices() {
 	fmt.Printf("a = %v, b = %v\n", a, b)
 	fmt.Println("names =", names)
 
+	q := []int{2, 3, 5, 7, 11, 13}
+	fmt.Printf("q = %v (%#[1]v)\n", q)
+
+	r := []bool{true, false, true, true, false, true}
+	fmt.Printf("r = %v (%#[1]v)\n", r)
+
+	u := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
+	}
+	fmt.Printf("s = %v\n", u)
 }
 
 func moreTypes() {
