@@ -51,9 +51,24 @@ func structs() {
 	fmt.Printf("v1 = %v, v2 = %v, v3 = %v, p = %v\n", v1, v2, v3, p_)
 }
 
+func arrays() {
+	var a [2]string
+	a[0] = "Hello"
+	a[1] = "World"
+	fmt.Println(a[0], a[1])
+	fmt.Println(a)
+	fmt.Printf("a = %v\n", a)
+	fmt.Printf("#a = %#v\n", a)
+
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+	fmt.Printf("primes = %v\n", primes)
+}
+
 func moreTypes() {
 	subtitle("Pointers")
 	pointers()
 	subtitle("Struct")
 	structs()
+	subtitle("Arrays")
+	arrays()
 }
