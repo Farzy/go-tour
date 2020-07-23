@@ -49,4 +49,6 @@ func main() {
 	moreTypes()
 	title("Exercise: Slices")
 	exerciceSlices()
+	title("Maps")
+	maps()
 }
