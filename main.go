@@ -45,4 +45,6 @@ func main() {
 	defers()
 	title("Types")
 	moreTypes()
+	title("Miscellaneous")
+	misc()
 }
