@@ -47,4 +47,6 @@ func main() {
 	misc()
 	title("Types")
 	moreTypes()
+	title("Exercise: Slices")
+	exerciceSlices()
 }
