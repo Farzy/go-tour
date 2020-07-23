@@ -53,4 +53,6 @@ func main() {
 	maps()
 	title("Exercice: Maps")
 	exerciceMaps()
+	title("Function values and closures")
+	functionValuesClosures()
 }
