@@ -51,4 +51,6 @@ func main() {
 	exerciceSlices()
 	title("Maps")
 	maps()
+	title("Exercice: Maps")
+	exerciceMaps()
 }
