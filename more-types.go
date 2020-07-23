@@ -179,6 +179,25 @@ func slices() {
 	for i := 0; i < len(board); i++ {
 		println(strings.Join(board[i], " "))
 	}
+
+	fmt.Println("Appending to a slice:")
+	var sa []int
+	printSlice("Empty slice", sa)
+
+	sa = append(sa, 0)
+	printSlice("Append works on a nil slice", sa)
+
+	sa = append(sa, 1)
+	printSlice("The slice grows as needed", sa)
+
+	sa = append(sa, 2, 3, 4)
+	printSlice("We add more than one element at a time", sa)
+
+	sa = append(sa, sa...)
+	printSlice("Add slide to itself", sa)
+
+	sa = append(sa, sa...)
+	printSlice("Add slide to itself again", sa)
 }
 
 func moreTypes() {
