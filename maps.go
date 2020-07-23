@@ -36,4 +36,19 @@ func maps() {
 		},
 	}
 	fmt.Printf("literal map with no type name: %v\n", m)
+
+	n := make(map[string]int)
+
+	n["Answer"] = 42
+	fmt.Println("The value:", n["Answer"])
+
+	n["Answer"] = 38
+	fmt.Println("The value:", n["Answer"])
+
+	delete(n, "Answer")
+	fmt.Println("The value:", n["Answer"])
+
+	v, ok := n["Answer"]
+	fmt.Println("The value:", v, "Present?", ok)
+
 }
