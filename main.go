@@ -55,4 +55,6 @@ func main() {
 	exerciceMaps()
 	title("Function values and closures")
 	functionValuesClosures()
+	title("Exercice: Fibonacci closure")
+	fibonacciClosure()
 }
