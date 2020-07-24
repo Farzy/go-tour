@@ -1,63 +1,49 @@
 package main
 
 import (
-	"fmt"
 	"go-tour/methods"
-	"strings"
+	"go-tour/utils"
 )
 
-func title(title string) {
-	fmt.Println("")
-	fmt.Println(strings.Repeat("#", len(title)+8))
-	fmt.Println("###", title, "###")
-	fmt.Println(strings.Repeat("#", len(title)+8))
-}
-
-func subtitle(subtitle string) {
-	fmt.Println("")
-	fmt.Println(subtitle)
-	fmt.Println(strings.Repeat("-", len(subtitle)))
-}
-
 func main() {
-	title("Hello")
+	utils.Title("Hello")
 	hello()
-	title("Sandbox")
+	utils.Title("Sandbox")
 	sandbox()
-	title("Packages")
+	utils.Title("Packages")
 	packages()
-	title("Functions")
+	utils.Title("Functions")
 	functions()
-	title("Variables")
+	utils.Title("Variables")
 	variables()
-	title("Types")
+	utils.Title("Types")
 	types()
-	title("Constants")
+	utils.Title("Constants")
 	constants()
-	title("For loops")
+	utils.Title("For loops")
 	forLoop()
-	title("If")
+	utils.Title("If")
 	ifs()
-	title("Exercices: Loops and functions")
+	utils.Title("Exercices: Loops and functions")
 	exerciceLoopsAndFunctions()
-	title("Switch")
+	utils.Title("Switch")
 	switches()
-	title("Defer")
+	utils.Title("Defer")
 	defers()
-	title("Miscellaneous")
+	utils.Title("Miscellaneous")
 	misc()
-	title("Types")
+	utils.Title("Types")
 	moreTypes()
-	title("Exercise: Slices")
+	utils.Title("Exercise: Slices")
 	exerciceSlices()
-	title("Maps")
+	utils.Title("Maps")
 	maps()
-	title("Exercice: Maps")
+	utils.Title("Exercice: Maps")
 	exerciceMaps()
-	title("Function values and closures")
+	utils.Title("Function values and closures")
 	functionValuesClosures()
-	title("Exercice: Fibonacci closure")
+	utils.Title("Exercice: Fibonacci closure")
 	fibonacciClosure()
-	title("Methods")
+	utils.Title("Methods")
 	methods.Main()
 }

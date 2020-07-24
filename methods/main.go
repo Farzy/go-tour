@@ -2,6 +2,7 @@ package methods
 
 import (
 	"fmt"
+	"go-tour/utils"
 	"math"
 )
 
@@ -33,6 +34,7 @@ func Main() {
 	fmt.Printf("After scaling: %+v, Abs: %v\n", w, w.Abs())
 
 	// Interface
+	utils.Subtitle("Interface")
 	var a Abser
 
 	a = f  // MyFloat implements Abser

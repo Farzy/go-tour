@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-tour/utils"
 	"math"
 )
 
@@ -18,7 +19,7 @@ func adder() func(int) int {
 }
 
 func functionValuesClosures() {
-	subtitle("Function values")
+	utils.Subtitle("Function values")
 	hypot := func(x, y float64) float64 {
 		return math.Sqrt(x*x + y*y)
 	}
@@ -27,7 +28,7 @@ func functionValuesClosures() {
 	fmt.Println(compute(hypot))
 	fmt.Println(compute(math.Pow))
 
-	subtitle("Function closures")
+	utils.Subtitle("Function closures")
 	pos, neg := adder(), adder()
 	for i := 0; i < 10; i++ {
 		fmt.Println(

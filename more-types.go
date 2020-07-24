@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-tour/utils"
 	"strings"
 )
 
@@ -217,14 +218,14 @@ func ranges() {
 }
 
 func moreTypes() {
-	subtitle("Pointers")
+	utils.Subtitle("Pointers")
 	pointers()
-	subtitle("Struct")
+	utils.Subtitle("Struct")
 	structs()
-	subtitle("Arrays")
+	utils.Subtitle("Arrays")
 	arrays()
-	subtitle("Slices")
+	utils.Subtitle("Slices")
 	slices()
-	subtitle("Range")
+	utils.Subtitle("Range")
 	ranges()
 }
