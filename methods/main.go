@@ -35,5 +35,8 @@ func Main() {
 	a = &v // *Vertex implements Abser
 	//a = v	// Vertex does not implement Abser
 
-	fmt.Printf("a is an interface var (= &v): %v", a.Abs())
+	fmt.Printf("a is an interface var (= &v): %v\n", a.Abs())
+
+	var i I = T{"Hello"}
+	i.M()
 }

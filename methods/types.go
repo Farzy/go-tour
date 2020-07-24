@@ -5,3 +5,7 @@ type Vertex struct {
 }
 
 type MyFloat float64
+
+type T struct {
+	S string
+}

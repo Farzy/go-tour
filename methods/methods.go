@@ -1,6 +1,7 @@
 package methods
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -32,4 +33,10 @@ func (v *Vertex) Scale(f float64) {
 func Scale(v *Vertex, f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
+}
+
+// This method means type T implements the interface I,
+// but we don't need to explicitly declare that it does so.
+func (t T) M() {
+	fmt.Println("In method M:", t.S)
 }
