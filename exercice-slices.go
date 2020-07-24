@@ -2,6 +2,7 @@ package main
 
 import "golang.org/x/tour/pic"
 
+// Pic draws a colored square
 func Pic(dx, dy int) [][]uint8 {
 	picture := make([][]uint8, dy)
 	for y := 0; y < dy; y++ {
