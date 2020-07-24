@@ -1,5 +1,7 @@
 package main
 
+import "golang.org/x/tour/pic"
+
 func Pic(dx, dy int) [][]uint8 {
 	picture := make([][]uint8, dy)
 	for y := 0; y < dy; y++ {
@@ -18,5 +20,5 @@ func Pic(dx, dy int) [][]uint8 {
 }
 
 func exerciceSlices() {
-	//pic.Show(Pic)
+	pic.Show(Pic)
 }
