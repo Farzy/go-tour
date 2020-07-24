@@ -5,6 +5,10 @@ import (
 	"math"
 )
 
+func describe(i I) {
+	fmt.Printf("(%v, %T\n", i, i)
+}
+
 func Main() {
 	v := Vertex{3, 4}
 	f := MyFloat(-math.Sqrt(2))
@@ -38,5 +42,13 @@ func Main() {
 	fmt.Printf("a is an interface var (= &v): %v\n", a.Abs())
 
 	var i I = T{"Hello"}
+	i.M()
+
+	j := &T{"Hello"}
+	describe(j)
+	j.M()
+
+	i = F(math.Pi)
+	describe(i)
 	i.M()
 }

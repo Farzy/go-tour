@@ -9,3 +9,5 @@ type MyFloat float64
 type T struct {
 	S string
 }
+
+type F float64

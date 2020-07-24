@@ -38,5 +38,9 @@ func Scale(v *Vertex, f float64) {
 // This method means type T implements the interface I,
 // but we don't need to explicitly declare that it does so.
 func (t T) M() {
-	fmt.Println("In method M:", t.S)
+	fmt.Println("In method M for type T:", t.S)
+}
+
+func (f F) M() {
+	fmt.Println("In method M for type F:", f)
 }
