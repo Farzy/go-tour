@@ -11,7 +11,11 @@ type Vertex struct {
 
 type MyFloat float64
 
-func (v Vertex) Abs() float64 {
+func (v *Vertex) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func (v Vertex) AbsV() float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
@@ -54,4 +58,9 @@ func Main() {
 	fmt.Printf("Scale(&p) as function = %v\n", v)
 	// Functions do not always accept pointers instead of values
 	//fmt.Printf("Function Abs(p) = %v\n", Abs(&v))
+
+	w := &Vertex{3, 4}
+	fmt.Printf("Before scaling: %+v, Abs: %v\n", w, w.Abs())
+	w.Scale(5)
+	fmt.Printf("After scaling: %+v, Abs: %v\n", w, w.Abs())
 }
