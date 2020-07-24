@@ -7,7 +7,7 @@ import (
 )
 
 func describe(i I) {
-	fmt.Printf("(%v, %T\n", i, i)
+	fmt.Printf("(%v, %T)\n", i, i)
 }
 
 func Main() {
