@@ -47,4 +47,11 @@ func Main() {
 	fmt.Printf("Scale(v) = %v\n", v)
 	Scale(&v, 10)
 	fmt.Printf("Scale(v) as function = %v\n", v)
+	p := &v
+	p.Scale(2)
+	fmt.Printf("Scale(&p) = %v\n", v)
+	Scale(p, 10)
+	fmt.Printf("Scale(&p) as function = %v\n", v)
+	// Functions do not always accept pointers instead of values
+	//fmt.Printf("Function Abs(p) = %v\n", Abs(&v))
 }
