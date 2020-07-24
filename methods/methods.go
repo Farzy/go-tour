@@ -32,6 +32,11 @@ func (v *Vertex) Scale(f float64) {
 	v.Y = v.Y * f
 }
 
+func Scale(v *Vertex, f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 func Main() {
 	v := Vertex{3, 4}
 	f := MyFloat(-math.Sqrt(2))
@@ -40,4 +45,6 @@ func Main() {
 	fmt.Printf("MyFloat.Abs(%v) = %v\n", f, f.Abs())
 	v.Scale(10)
 	fmt.Printf("Scale(v) = %v\n", v)
+	Scale(&v, 10)
+	fmt.Printf("Scale(v) as function = %v\n", v)
 }
