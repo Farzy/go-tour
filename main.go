@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/Farzy/go-tour/methods"
+	"go-tour/methods"
 	"strings"
 )
 
