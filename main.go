@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/Farzy/go-tour/methods"
 	"strings"
 )
 
@@ -57,4 +58,6 @@ func main() {
 	functionValuesClosures()
 	title("Exercice: Fibonacci closure")
 	fibonacciClosure()
+	title("Methods")
+	methods.Main()
 }
