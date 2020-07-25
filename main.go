@@ -2,6 +2,7 @@ package main
 
 import (
 	"go-tour/methods"
+	more_types "go-tour/more-types"
 	"go-tour/utils"
 )
 
@@ -46,4 +47,6 @@ func main() {
 	fibonacciClosure()
 	utils.Title("Methods")
 	methods.Main()
+	utils.Title("Types manipulation")
+	more_types.Main()
 }
