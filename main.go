@@ -59,4 +59,6 @@ func main() {
 	exerciceErrors()
 	utils.Title("Readers")
 	readers.Main()
+	utils.Title("Exercice: Readers")
+	exerciceReaders()
 }
