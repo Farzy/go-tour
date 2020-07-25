@@ -53,4 +53,7 @@ func Main() {
 	i = F(math.Pi)
 	describe(i)
 	i.M()
+
+	utils.Subtitle("Interface values with nil underlying values")
+	nils()
 }
