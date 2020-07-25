@@ -56,4 +56,7 @@ func Main() {
 
 	utils.Subtitle("Interface values with nil underlying values")
 	nils()
+
+	utils.Subtitle("Nil interface values")
+	nilInterfaceValue()
 }

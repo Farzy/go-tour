@@ -30,3 +30,12 @@ func nils() {
 	describeJ(j)
 	j.N()
 }
+
+func nilInterfaceValue() {
+	var k I
+	fmt.Println("Uncomment line in source code to trigger panic.")
+	describe(k)
+	// panic: runtime error: invalid memory address or nil pointer dereference
+	// [signal SIGSEGV: segmentation violation code=0x1 addr=0x0 pc=0x10c5863]
+	//k.M()
+}
