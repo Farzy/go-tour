@@ -5,6 +5,15 @@ import (
 	"go-tour/utils"
 )
 
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) String() string {
+	return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+}
+
 func do(i interface{}) {
 	switch v := i.(type) {
 	case int:
@@ -39,4 +48,15 @@ func Main() {
 	do(21)
 	do("hello")
 	do(true)
+
+	utils.Subtitle("Stringer")
+	a := Person{
+		"Arthur Dent",
+		42,
+	}
+	z := Person{
+		"Zaphod Beeblebrox",
+		9001,
+	}
+	fmt.Println(a, z)
 }
