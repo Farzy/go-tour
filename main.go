@@ -1,6 +1,7 @@
 package main
 
 import (
+	"go-tour/errors"
 	"go-tour/methods"
 	more_types "go-tour/more-types"
 	"go-tour/utils"
@@ -51,4 +52,6 @@ func main() {
 	more_types.Main()
 	utils.Title("Exercice: Stringer")
 	exerciceStringer()
+	utils.Title("Errors")
+	errors.Main()
 }
