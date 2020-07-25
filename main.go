@@ -61,4 +61,6 @@ func main() {
 	readers.Main()
 	utils.Title("Exercice: Readers")
 	exerciceReaders()
+	utils.Title("Exercice: rot13Reader")
+	exerciceRot13Reader()
 }
