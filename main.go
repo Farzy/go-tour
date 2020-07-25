@@ -54,4 +54,6 @@ func main() {
 	exerciceStringer()
 	utils.Title("Errors")
 	errors.Main()
+	utils.Title("Exercice: Errors")
+	exerciceErrors()
 }
