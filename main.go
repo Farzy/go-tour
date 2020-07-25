@@ -4,6 +4,7 @@ import (
 	"go-tour/errors"
 	"go-tour/methods"
 	more_types "go-tour/more-types"
+	"go-tour/readers"
 	"go-tour/utils"
 )
 
@@ -56,4 +57,6 @@ func main() {
 	errors.Main()
 	utils.Title("Exercice: Errors")
 	exerciceErrors()
+	utils.Title("Readers")
+	readers.Main()
 }
