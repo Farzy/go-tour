@@ -59,4 +59,7 @@ func Main() {
 
 	utils.Subtitle("Nil interface values")
 	nilInterfaceValue()
+
+	utils.Subtitle("Empty interface")
+	emptyInterface()
 }
