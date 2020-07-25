@@ -49,4 +49,6 @@ func main() {
 	methods.Main()
 	utils.Title("Types manipulation")
 	more_types.Main()
+	utils.Title("Exercice: Stringer")
+	exerciceStringer()
 }
