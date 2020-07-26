@@ -8,59 +8,44 @@ import (
 	"go-tour/utils"
 )
 
+type Exercice struct {
+	title    string
+	function func()
+}
+
+var exercises = []Exercice{
+	{"Hello", hello},
+	{"Sandbox", sandbox},
+	{"Packages", packages},
+	{"Functions", functions},
+	{"Variables", variables},
+	{"Tyoes", types},
+	{"Constants", constants},
+	{"For loops", forLoop},
+	{"If", ifs},
+	{"Exercices: Loops and functions", exerciceLoopsAndFunctions},
+	{"Switch", switches},
+	{"Defer", defers},
+	{"Miscellaneous", misc},
+	{"More Types", moreTypes},
+	{"Exercice: Slices", exerciceSlices},
+	{"Maps", maps},
+	{"Exercice: Maps", exerciceMaps},
+	{"Function values and closures", functionValuesClosures},
+	{"Exercice: Fibonacci closure", fibonacciClosure},
+	{"Methods", methods.Main},
+	{"Types manipulation", more_types.Main},
+	{"Exercice: Stringer", exerciceStringer},
+	{"Errors", errors.Main},
+	{"Exercice: Errors", exerciceErrors},
+	{"Readers", readers.Main},
+	{"Exercice: Readers", exerciceReaders},
+	{"Exercice: rot13Reader", exerciceRot13Reader},
+}
+
 func main() {
-	utils.Title("Hello")
-	hello()
-	utils.Title("Sandbox")
-	sandbox()
-	utils.Title("Packages")
-	packages()
-	utils.Title("Functions")
-	functions()
-	utils.Title("Variables")
-	variables()
-	utils.Title("Types")
-	types()
-	utils.Title("Constants")
-	constants()
-	utils.Title("For loops")
-	forLoop()
-	utils.Title("If")
-	ifs()
-	utils.Title("Exercices: Loops and functions")
-	exerciceLoopsAndFunctions()
-	utils.Title("Switch")
-	switches()
-	utils.Title("Defer")
-	defers()
-	utils.Title("Miscellaneous")
-	misc()
-	utils.Title("Types")
-	moreTypes()
-	utils.Title("Exercise: Slices")
-	exerciceSlices()
-	utils.Title("Maps")
-	maps()
-	utils.Title("Exercice: Maps")
-	exerciceMaps()
-	utils.Title("Function values and closures")
-	functionValuesClosures()
-	utils.Title("Exercice: Fibonacci closure")
-	fibonacciClosure()
-	utils.Title("Methods")
-	methods.Main()
-	utils.Title("Types manipulation")
-	more_types.Main()
-	utils.Title("Exercice: Stringer")
-	exerciceStringer()
-	utils.Title("Errors")
-	errors.Main()
-	utils.Title("Exercice: Errors")
-	exerciceErrors()
-	utils.Title("Readers")
-	readers.Main()
-	utils.Title("Exercice: Readers")
-	exerciceReaders()
-	utils.Title("Exercice: rot13Reader")
-	exerciceRot13Reader()
+	for _, ex := range exercises {
+		utils.Title(ex.title)
+		ex.function()
+	}
 }
