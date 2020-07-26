@@ -45,6 +45,7 @@ var exercises = []Exercice{
 	{"Exercice: Readers", exerciceReaders},
 	{"Exercice: rot13Reader", exerciceRot13Reader},
 	{"images", images},
+	{"Exercice: Images", exerciceImages},
 }
 
 func usage() {
