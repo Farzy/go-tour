@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-tour/errors"
+	"go-tour/images"
 	"go-tour/methods"
 	more_types "go-tour/more-types"
 	"go-tour/readers"
@@ -44,7 +45,7 @@ var exercises = []Exercice{
 	{"Readers", readers.Main},
 	{"Exercice: Readers", exerciceReaders},
 	{"Exercice: rot13Reader", exerciceRot13Reader},
-	{"images", images},
+	{"images", images.Images},
 	{"Exercice: Images", exerciceImages},
 }
 
