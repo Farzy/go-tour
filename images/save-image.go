@@ -3,6 +3,7 @@ package images
 import (
 	"image"
 	"image/color"
+	"image/jpeg"
 	"image/png"
 	"log"
 	"os"
@@ -52,6 +53,20 @@ func SaveImage() {
 	}
 
 	if err := pngEncoder.Encode(f, m); err != nil {
+		_ = f.Close()
+		log.Fatal(err)
+	}
+
+	if err := f.Close(); err != nil {
+		log.Fatal(err)
+	}
+
+	f, err = os.Create("image.jpg")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if err := jpeg.Encode(f, m, nil); err != nil {
 		_ = f.Close()
 		log.Fatal(err)
 	}
