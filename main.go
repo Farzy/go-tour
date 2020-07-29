@@ -5,7 +5,7 @@ import (
 	"go-tour/errors"
 	"go-tour/images"
 	"go-tour/methods"
-	more_types "go-tour/more-types"
+	moreTypes "go-tour/more-types"
 	"go-tour/readers"
 	"go-tour/utils"
 	"os"
@@ -23,7 +23,7 @@ var exercises = []Exercice{
 	{"Packages", packages},
 	{"Functions", functions},
 	{"Variables", variables},
-	{"Tyoes", types},
+	{"Types", types},
 	{"Constants", constants},
 	{"For loops", forLoop},
 	{"If", ifs},
@@ -31,14 +31,14 @@ var exercises = []Exercice{
 	{"Switch", switches},
 	{"Defer", defers},
 	{"Miscellaneous", misc},
-	{"More Types", moreTypes},
+	{"More Types", types2},
 	{"Exercice: Slices", exerciceSlices},
 	{"Maps", maps},
 	{"Exercice: Maps", exerciceMaps},
 	{"Function values and closures", functionValuesClosures},
 	{"Exercice: Fibonacci closure", fibonacciClosure},
 	{"Methods", methods.Main},
-	{"Types manipulation", more_types.Main},
+	{"Types manipulation", moreTypes.Main},
 	{"Exercice: Stringer", exerciceStringer},
 	{"Errors", errors.Main},
 	{"Exercice: Errors", exerciceErrors},

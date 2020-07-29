@@ -217,7 +217,7 @@ func ranges() {
 	}
 }
 
-func moreTypes() {
+func types2() {
 	utils.Subtitle("Pointers")
 	pointers()
 	utils.Subtitle("Struct")
