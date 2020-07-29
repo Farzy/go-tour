@@ -51,6 +51,7 @@ var exercises = []Exercice{
 	{"Save Image", images.SaveImage},
 	{"Goroutines", concurrency.Goroutines},
 	{"Channels", concurrency.Channels},
+	{"BuffererChannels", concurrency.BufferedChannels},
 }
 
 func usage() {
