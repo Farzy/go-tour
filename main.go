@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-tour/concurrency"
 	"go-tour/errors"
 	"go-tour/images"
 	"go-tour/methods"
@@ -48,6 +49,7 @@ var exercises = []Exercice{
 	{"images", images.Images},
 	{"Exercice: Images", exerciceImages},
 	{"Save Image", images.SaveImage},
+	{"Goroutines", concurrency.Goroutines},
 }
 
 func usage() {
