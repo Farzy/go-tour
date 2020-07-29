@@ -50,6 +50,7 @@ var exercises = []Exercice{
 	{"Exercice: Images", exerciceImages},
 	{"Save Image", images.SaveImage},
 	{"Goroutines", concurrency.Goroutines},
+	{"Channels", concurrency.Channels},
 }
 
 func usage() {
