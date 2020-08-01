@@ -10,8 +10,8 @@ func delayedFunc() {
 }
 func UseAfterFunc() {
 	fmt.Printf("Main: About to create a delayed func call at %v\n", time.Now())
-	_ = time.AfterFunc(2*time.Second, delayedFunc)
-	fmt.Println("Main: Sleeping for 3 seconds…")
-	time.Sleep(3 * time.Second)
+	_ = time.AfterFunc(1*time.Second, delayedFunc)
+	fmt.Println("Main: Sleeping for 2 seconds…")
+	time.Sleep(2 * time.Second)
 	fmt.Printf("Main: End sleep at %v\n", time.Now())
 }

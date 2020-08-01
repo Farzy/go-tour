@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-tour/binarySearchTree"
 	"go-tour/concurrency"
 	"go-tour/errors"
 	"go-tour/images"
@@ -51,11 +52,12 @@ var exercises = []Exercice{
 	{"Save Image", images.SaveImage},
 	{"Goroutines", concurrency.Goroutines},
 	{"Channels", concurrency.Channels},
-	{"BuffererChannels", concurrency.BufferedChannels},
+	{"Buffered Channels", concurrency.BufferedChannels},
 	{"Range and Close", concurrency.RangeAndClose},
 	{"Select", concurrency.Select},
 	{"After Func", concurrency.UseAfterFunc},
 	{"Default Selection", concurrency.DefaultSelection},
+	{"Binary Trees", binarySearchTree.ConcurrentBinaryTree},
 }
 
 func usage() {
