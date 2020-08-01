@@ -55,6 +55,7 @@ var exercises = []Exercice{
 	{"Range and Close", concurrency.RangeAndClose},
 	{"Select", concurrency.Select},
 	{"After Func", concurrency.UseAfterFunc},
+	{"Default Selection", concurrency.DefaultSelection},
 }
 
 func usage() {
