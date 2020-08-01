@@ -53,6 +53,7 @@ var exercises = []Exercice{
 	{"Channels", concurrency.Channels},
 	{"BuffererChannels", concurrency.BufferedChannels},
 	{"Range and Close", concurrency.RangeAndClose},
+	{"Select", concurrency.Select},
 }
 
 func usage() {
