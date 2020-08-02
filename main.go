@@ -58,6 +58,7 @@ var exercises = []Exercice{
 	{"After Func", concurrency.UseAfterFunc},
 	{"Default Selection", concurrency.DefaultSelection},
 	{"Binary Trees", binarySearchTree.ConcurrentBinaryTree},
+	{"Sync Mutex", concurrency.SyncMutex},
 }
 
 func usage() {
