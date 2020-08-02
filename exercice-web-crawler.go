@@ -6,6 +6,7 @@ import (
 	"os"
 	"runtime"
 	"strconv"
+	"sync"
 )
 
 type Fetcher interface {
@@ -14,11 +15,31 @@ type Fetcher interface {
 	Fetch(url string) (body string, urls []string, err error)
 }
 
+type SafeUrl struct {
+	urls map[string]bool
+	mux  sync.Mutex
+}
+
+// Check if an URL has already been visited, add it to the list
+// in any case.
+func (u *SafeUrl) visit(url string) bool {
+	u.mux.Lock()
+	defer u.mux.Unlock()
+
+	_, ok := u.urls[url]
+	if ok {
+		// URL already visited
+		return false
+	} else {
+		// Add URL to list and visit it
+		u.urls[url] = true
+		return true
+	}
+}
+
 // Crawl uses fetcher to recursively crawl
 // pages starting with url, to a maximum depth.
-func Crawl(url string, depth int, fetcher Fetcher) {
-	// TODO: Don't fetch the same URL twice.
-	// This implementation doesn't do either:
+func Crawl(url string, depth int, fetcher Fetcher, urlsVisited *SafeUrl) {
 	if depth <= 0 {
 		return
 	}
@@ -29,7 +50,9 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 	}
 	fmt.Printf("found: %s %q\n", url, body)
 	for _, u := range urls {
-		go Crawl(u, depth-1, fetcher)
+		if urlsVisited.visit(u) {
+			go Crawl(u, depth-1, fetcher, urlsVisited)
+		}
 	}
 	return
 }
@@ -46,8 +69,13 @@ func exerciceWebCrawler() {
 		DEPTH = int(i)
 	}
 
+	urlsVisited := SafeUrl{
+		urls: make(map[string]bool),
+	}
+
 	initialProcs := runtime.NumGoroutine()
-	Crawl("https://golang.org/", DEPTH, fetcher)
+	urlsVisited.visit("https://golang.org/") // Mark base url as visited
+	Crawl("https://golang.org/", DEPTH, fetcher, &urlsVisited)
 	for procs := runtime.NumGoroutine(); procs != initialProcs; {
 		if DEBUG {
 			fmt.Println("Current number of Goroutines:", procs)
