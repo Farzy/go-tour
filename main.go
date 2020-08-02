@@ -59,6 +59,7 @@ var exercises = []Exercice{
 	{"Default Selection", concurrency.DefaultSelection},
 	{"Binary Trees", binarySearchTree.ConcurrentBinaryTree},
 	{"Sync Mutex", concurrency.SyncMutex},
+	{"Exercice: Web Crawler", exerciceWebCrawler},
 }
 
 func usage() {
