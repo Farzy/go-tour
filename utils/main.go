@@ -17,3 +17,12 @@ func Subtitle(subtitle string) {
 	fmt.Println(subtitle)
 	fmt.Println(strings.Repeat("-", len(subtitle)))
 }
+
+func Contains(stringList []string, stringSource string) bool {
+	for _, v := range stringList {
+		if v == stringSource {
+			return true
+		}
+	}
+	return false
+}
