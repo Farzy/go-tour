@@ -1,6 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go-tour/utils"
+	"os"
+	"runtime"
+	"strconv"
+)
 
 type Fetcher interface {
 	// Fetch returns the body of URL and
@@ -11,7 +17,6 @@ type Fetcher interface {
 // Crawl uses fetcher to recursively crawl
 // pages starting with url, to a maximum depth.
 func Crawl(url string, depth int, fetcher Fetcher) {
-	// TODO: Fetch URLs in parallel.
 	// TODO: Don't fetch the same URL twice.
 	// This implementation doesn't do either:
 	if depth <= 0 {
@@ -24,13 +29,31 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 	}
 	fmt.Printf("found: %s %q\n", url, body)
 	for _, u := range urls {
-		Crawl(u, depth-1, fetcher)
+		go Crawl(u, depth-1, fetcher)
 	}
 	return
 }
 
 func exerciceWebCrawler() {
-	Crawl("https://golang.org/", 10, fetcher)
+	var DEBUG = utils.Contains(
+		[]string{"true", "TRUE", "yes", "YES", "y", "1"},
+		os.Getenv("DEBUG"))
+	var DEPTH int
+	i, ok := strconv.ParseInt(os.Getenv("DEPTH"), 10, 0)
+	if ok != nil || i < 1 {
+		DEPTH = 4
+	} else {
+		DEPTH = int(i)
+	}
+
+	initialProcs := runtime.NumGoroutine()
+	Crawl("https://golang.org/", DEPTH, fetcher)
+	for procs := runtime.NumGoroutine(); procs != initialProcs; {
+		if DEBUG {
+			fmt.Println("Current number of Goroutines:", procs)
+		}
+		procs = runtime.NumGoroutine()
+	}
 }
 
 // fakeFetcher is Fetcher that returns canned results.
