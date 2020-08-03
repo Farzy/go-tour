@@ -6,6 +6,7 @@ import (
 	"os"
 	"runtime"
 	"strconv"
+	"strings"
 	"sync"
 )
 
@@ -59,8 +60,8 @@ func Crawl(url string, depth int, fetcher Fetcher, urlsVisited *SafeUrl) {
 
 func exerciceWebCrawler() {
 	var DEBUG = utils.Contains(
-		[]string{"true", "TRUE", "yes", "YES", "y", "1"},
-		os.Getenv("DEBUG"))
+		[]string{"true", "yes", "y", "1"},
+		strings.ToLower(os.Getenv("DEBUG")))
 	var DEPTH int
 	i, ok := strconv.ParseInt(os.Getenv("DEPTH"), 10, 0)
 	if ok != nil || i < 1 {
@@ -68,6 +69,10 @@ func exerciceWebCrawler() {
 	} else {
 		DEPTH = int(i)
 	}
+
+	fmt.Printf(
+		"You can set DEPTH (current: %v) or DEBUG (current: %v) as environment variables\n",
+		DEPTH, DEBUG)
 
 	urlsVisited := SafeUrl{
 		urls: make(map[string]bool),
