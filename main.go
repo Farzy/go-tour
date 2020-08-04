@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"go-tour/allocation"
 	"go-tour/binarySearchTree"
 	"go-tour/concurrency"
 	"go-tour/errors"
@@ -60,6 +61,7 @@ var exercises = []Exercice{
 	{"Binary Trees", binarySearchTree.ConcurrentBinaryTree},
 	{"Sync Mutex", concurrency.SyncMutex},
 	{"Exercice: Web Crawler", exerciceWebCrawler},
+	{"Allocation", allocation.Main},
 }
 
 func usage() {
