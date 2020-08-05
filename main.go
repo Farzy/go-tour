@@ -7,6 +7,7 @@ import (
 	"go-tour/concurrency"
 	"go-tour/errors"
 	"go-tour/images"
+	"go-tour/initialization"
 	"go-tour/methods"
 	moreTypes "go-tour/more-types"
 	"go-tour/readers"
@@ -62,6 +63,7 @@ var exercises = []Exercice{
 	{"Sync Mutex", concurrency.SyncMutex},
 	{"Exercice: Web Crawler", exerciceWebCrawler},
 	{"Allocation", allocation.Main},
+	{"Initialization", initialization.Main},
 }
 
 func usage() {
