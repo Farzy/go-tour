@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"go-tour/allocation"
+	"go-tour/appends"
 	"go-tour/binarySearchTree"
 	"go-tour/concurrency"
 	"go-tour/errors"
@@ -64,6 +65,7 @@ var exercises = []Exercice{
 	{"Exercice: Web Crawler", exerciceWebCrawler},
 	{"Allocation", allocation.Main},
 	{"Initialization", initialization.Main},
+	{"Appends", appends.Main},
 }
 
 func usage() {
