@@ -50,6 +50,22 @@ func (p *ByteSlice) Appendp(data []byte) {
 	*p = slice
 }
 
+func (p *ByteSlice) Write(data []byte) (n int, err error) {
+	slice := *p
+	l := len(slice)
+	if l+len(data) > cap(slice) { // reallocate
+		// Allocate double what's needed, for future growth.
+		newSlice := make([]byte, (l+len(data))*2)
+		// The copy function is predeclared and works for any slice type.
+		copy(newSlice, slice)
+		slice = newSlice
+	}
+	slice = slice[0 : l+len(data)]
+	copy(slice[l:], data)
+	*p = slice
+	return len(data), nil
+}
+
 func Main() {
 	utils.Subtitle("Append as a function")
 	a := []byte{1, 2, 4, 6, 13, 27}
@@ -74,4 +90,10 @@ func Main() {
 	fmt.Printf("c = %v, len(*c) = %d, cap(*c) = %d, type(c) = %[1]T\n", c, len(*c), cap(*c))
 	c.Appendp([]byte{11, 22, 33, 44, 55, 66, 77, 88})
 	fmt.Printf("c = %v, len(*c) = %d, cap(*c) = %d, type(c) = %[1]T\n", c, len(*c), cap(*c))
+
+	utils.Subtitle("Writing on ByteSlice using *io.Write")
+	var bIO ByteSlice
+	_, _ = fmt.Fprintf(&bIO, "This hour has %d days\n", 7)
+	fmt.Printf("ByteSlide bIO = %v\n", bIO)
+	fmt.Printf("ByteSlide string(bIO) = %v", string(bIO))
 }
