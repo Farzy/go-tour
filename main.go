@@ -7,6 +7,7 @@ import (
 	"go-tour/effectiveGo/allocation"
 	"go-tour/effectiveGo/appends"
 	"go-tour/effectiveGo/initialization"
+	"go-tour/effectiveGo/interfaces"
 	"go-tour/errors"
 	"go-tour/images"
 	"go-tour/methods"
@@ -66,6 +67,7 @@ var exercises = []Exercice{
 	{"Allocation", allocation.Main},
 	{"Initialization", initialization.Main},
 	{"Appends", appends.Main},
+	{"HTTP serve counter", interfaces.ServeCounter},
 }
 
 func usage() {
