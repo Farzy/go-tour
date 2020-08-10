@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"go-tour/allocation"
-	"go-tour/appends"
 	"go-tour/binarySearchTree"
 	"go-tour/concurrency"
+	"go-tour/effectiveGo/allocation"
+	"go-tour/effectiveGo/appends"
+	"go-tour/effectiveGo/initialization"
 	"go-tour/errors"
 	"go-tour/images"
-	"go-tour/initialization"
 	"go-tour/methods"
 	moreTypes "go-tour/more-types"
 	"go-tour/readers"
