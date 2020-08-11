@@ -4,10 +4,22 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 //type Handler interface {
 //	ServerHTTP(w http.ResponseWriter, r *http.Request)
+//}
+
+// The HandlerFunc type is an adapter to allow the use of
+// ordinary functions as HTTP handlers.  If f is a function
+// with the appropriate signature, HandlerFunc(f) is a
+// Handler object that calls f.
+//type HandlerFunc func(http.ResponseWriter, *http.Request)
+
+// ServeHTTP calls f(w, req).
+//func (f HandlerFunc) ServeHTTP(w http.ResponseWriter, req *http.Request) {
+//	f(w, req)
 //}
 
 // Simple counter server
@@ -35,6 +47,11 @@ func notificationReceiver(ch Chan) {
 	}
 }
 
+// Argument server.
+func ArgServer(w http.ResponseWriter, _ *http.Request) {
+	_, _ = fmt.Fprintln(w, os.Args)
+}
+
 func ServeCounter() {
 	ctr := new(Counter)
 	http.Handle("/counter", ctr)
@@ -43,8 +60,11 @@ func ServeCounter() {
 	http.Handle("/notification", notification)
 	go notificationReceiver(notification)
 
+	http.HandleFunc("/args", http.HandlerFunc(ArgServer))
+
 	fmt.Println("Connect to:")
 	fmt.Println("* http://localhost:8080/counter")
 	fmt.Println("* http://localhost:8080/notification")
+	fmt.Println("* http://localhost:8080/args")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
