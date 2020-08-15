@@ -9,6 +9,7 @@ import (
 	"go-tour/effectiveGo/goroutines"
 	"go-tour/effectiveGo/initialization"
 	"go-tour/effectiveGo/interfaces"
+	"go-tour/effectiveGo/webserver"
 	"go-tour/errors"
 	"go-tour/images"
 	"go-tour/methods"
@@ -70,6 +71,7 @@ var exercises = []Exercice{
 	{"Appends", appends.Main},
 	{"HTTP serve counter", interfaces.ServeCounter},
 	{"Goroutines 2", goroutines.Main},
+	{"Web server", webserver.Main},
 }
 
 func usage() {
